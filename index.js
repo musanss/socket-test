@@ -1,10 +1,14 @@
-var http = require('http');
-//creating server
-var server = new http.createServer();
-//setting server listening port and domain
+var server = require('http').createServer();
+var io = require('socket.io')(server);
+io.on('connection', function(client){
+  
+});
 server.listen(3000);
-var io = require('socket.io').listen(server, {transports: ["flashsocket" ,"websocket", "xhr-polling", "htmlfile", "jsonp-polling"]});
 
-io.sockets.on('connection', function (socket) {
-   socket.emit('WelcomeMsg', 'hello world');
-   });
+/*var app = require('express')();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+io.on('connection', function(){
+	
+});
+server.listen(3000);*/
