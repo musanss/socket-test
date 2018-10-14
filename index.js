@@ -1,6 +1,6 @@
 var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http).listen(http, {transports:['flashsocket', 'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling']});
+var http = require('http').createServer();
+var io = require('socket.io').listen(http, {transports:['flashsocket', 'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling']});
 var port = process.env.PORT || 3000;
 
 app.get('/', function(req, res){
