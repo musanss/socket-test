@@ -1,5 +1,5 @@
 var app = require('http').createServer(handler)
-  , io = require('socket.io').listen(app, {transports:[ 'websocket', 'htmlfile', 'xhr-polling', 'jsonp-polling']})
+  , io = require('socket.io').listen(app)
   , fs = require('fs')
 
 app.listen(8085);
